@@ -1,0 +1,150 @@
+*,
+html {
+  margin: 0;
+  padding: 0;
+}
+/* body style */
+body {
+  color: #333333;
+  font-family: "Lato", sans-serif;
+}
+
+/* header and nav */
+header {
+  display: flex;
+  width: 100%;
+  height: 40px;
+  justify-content: center;
+  align-items: center;
+  background-color: #f9f9fa;
+}
+nav a {
+  color: #333333;
+  padding: 8px 16px;
+  text-decoration: none;
+  font-size: 16px;
+  text-transform: uppercase;
+  border-radius: 4px;
+  transition: 0.3s;
+}
+nav a.active {
+  background-color: #333333;
+  color: #f9f9fa;
+}
+nav a:hover {
+  background-color: #333333ad;
+  color: #f9f9fa;
+}
+
+/* main */
+main {
+  width: 100%;
+  padding: 0 8%;
+  overflow: hidden;
+  box-sizing: border-box;
+  background: url(./images/banner-bg.gif);
+}
+
+/* home banner */
+.banner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 60px;
+  margin-bottom: 80px;
+}
+.banner-image {
+  flex-basis: 50%;
+  position: relative;
+  margin-left: 50px;
+}
+.banner-image img {
+  width: 100%;
+  border-radius: 10%;
+}
+.banner-content {
+  flex-basis: 50%;
+  position: relative;
+  margin-left: 50px;
+}
+.banner-content h1 {
+  text-transform: capitalize;
+  margin-bottom: 16px;
+  font-size: 34px;
+}
+.banner-content h1 span {
+  text-transform: uppercase;
+}
+.banner-content a {
+  text-decoration: none;
+  text-transform: capitalize;
+  font-weight: 900;
+  padding: 8px 16px;
+  color: #294f83;
+  transition: 0.4s;
+  font-size: 20px;
+  border: 2px solid white;
+}
+.banner-content a:hover {
+  color: #ffffff;
+  background-color: #294f83;
+}
+
+/* home intro */
+.intro {
+  padding: 20px 50px;
+}
+.intro h1 {
+  text-transform: capitalize;
+  font-size: 34px;
+  margin: 8px 0;
+}
+.intro h1 span {
+  text-transform: uppercase;
+  font-size: 40px;
+}
+.intro p {
+  background-color: white;
+  font-size: 20px;
+  line-height: 1.25;
+}
+.intro-divider {
+  display: block;
+  margin: 12px 0;
+}
+
+/* home more content */
+.more {
+  padding: 20px 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.more-content {
+    flex-basis: 60%;
+}
+.more-content p {
+  background-color: white;
+  font-size: 20px;
+  line-height: 1.25;
+}
+.more-image{
+    flex-basis: 40%;
+}
+.more-image img{
+    width: 100%;
+}
+
+/* footer */
+footer {
+  display: flex;
+  justify-content: center;
+  padding: 10px 0;
+  font-size: 18px;
+  background-color: #333333;
+  color: #f9f9fa;
+}
+footer a {
+  color: #c5c5cc;
+  text-decoration: none;
+}
