@@ -3,6 +3,55 @@ html {
   margin: 0;
   padding: 0;
 }
+*::selection{
+  background-color: #294f83;
+  color: #ffffff;
+}
+a {
+  text-decoration: none;
+  color: #294f83;
+}
+dl {
+  margin: 1em 0;
+}
+dd {
+  margin-inline-start: 40px;
+}
+h1 {
+  font-size: 34px;
+  margin: 8px 0;
+}
+h2 {
+  text-transform: capitalize;
+}
+p {
+  font-size: 20px;
+  line-height: 1.25;
+}
+h2 span {
+  text-transform: uppercase;
+}
+aside {
+  border: 1px solid #333333;
+  background-color: #ffffff;
+}
+table,
+th,
+td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+th,
+td {
+  width: 10%;
+  height: 30px;
+  text-align: center;
+  padding: 2px 16px;
+}
+th {
+  background-color: #294f83;
+  color: white;
+}
 /* body style */
 body {
   color: #333333;
@@ -17,11 +66,14 @@ header {
   justify-content: center;
   align-items: center;
   background-color: #f9f9fa;
+  position: sticky;
+  top: 0;
+  z-index: 1;
 }
 nav a {
   color: #333333;
   padding: 8px 16px;
-  text-decoration: none;
+
   font-size: 16px;
   text-transform: uppercase;
   border-radius: 4px;
@@ -39,12 +91,22 @@ nav a:hover {
 /* main */
 main {
   width: 100%;
-  padding: 0 8%;
+  padding: 0 12%;
   overflow: hidden;
   box-sizing: border-box;
-  background: url(./images/banner-bg.gif);
+  background: url(./images/white.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
+main#topic section {
+  margin-bottom: 30px;
+}
+div.topic-content div {
+  margin-bottom: 30px;
+}
+section {
+}
 /* home banner */
 .banner {
   display: flex;
@@ -69,14 +131,11 @@ main {
 }
 .banner-content h1 {
   text-transform: capitalize;
-  margin-bottom: 16px;
-  font-size: 34px;
 }
 .banner-content h1 span {
   text-transform: uppercase;
 }
 .banner-content a {
-  text-decoration: none;
   text-transform: capitalize;
   font-weight: 900;
   padding: 8px 16px;
@@ -92,21 +151,17 @@ main {
 
 /* home intro */
 .intro {
-  padding: 20px 50px;
+  padding: 20px 0;
 }
 .intro h1 {
   text-transform: capitalize;
-  font-size: 34px;
-  margin: 8px 0;
 }
 .intro h1 span {
   text-transform: uppercase;
   font-size: 40px;
 }
 .intro p {
-  background-color: white;
-  font-size: 20px;
-  line-height: 1.25;
+  /* background-color: white; */
 }
 .intro-divider {
   display: block;
@@ -115,24 +170,100 @@ main {
 
 /* home more content */
 .more {
-  padding: 20px 50px;
+  padding: 0 0 40px;
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-start;
 }
 .more-content {
-    flex-basis: 60%;
+  flex-basis: 70%;
+  margin-top: 50px;
+  padding-right: 20px;
 }
-.more-content p {
-  background-color: white;
-  font-size: 20px;
-  line-height: 1.25;
+.more-side {
+  flex-basis: 30%;
+  padding: 10px;
 }
-.more-image{
-    flex-basis: 40%;
+.more-side img {
+  width: 100%;
 }
-.more-image img{
-    width: 100%;
+.more h2 {
+  margin-bottom: 10px;
+}
+.more h2 span {
+  text-transform: uppercase;
+}
+.more-side p {
+}
+.more-side ol {
+  margin-left: 14px;
+  margin-top: 4px;
+}
+.more-side a {
+  font-weight: bold;
+  color: #475889;
+}
+
+/* topic */
+/* topic introduction */
+.about {
+  display: flex;
+  flex-direction: row;
+}
+.about-content {
+  flex-basis: 60%;
+}
+.about-content h1 {
+  text-transform: capitalize;
+}
+.about-content p {
+  margin-top: 16px;
+}
+.about-img {
+  flex-basis: 40%;
+}
+.about-img img {
+  width: 60%;
+}
+
+
+/* topic history */
+.history {
+  margin-top: 10px;
+}
+.topic-table {
+  overflow-x: auto;
+}
+
+.topic-with-aside {
+  display: flex;
+}
+.topic-content {
+  flex-basis: 70%;
+  padding-right: 20px;
+}
+.topic-aside {
+  flex-basis: 30%;
+  position: relative;
+  padding: 10px;
+  height: fit-content;
+}
+.topic-aside img {
+  width: 100%;
+}
+.topic-aside ol {
+  margin-left: 20px;
+}
+
+.struct-img img {
+  width: 100%;
+}
+
+main#topic table {
+  margin-top: 10px;
+}
+.browser-table {
+  overflow-x: auto;
 }
 
 /* footer */
@@ -141,10 +272,149 @@ footer {
   justify-content: center;
   padding: 10px 0;
   font-size: 18px;
+  font-style: italic;
   background-color: #333333;
   color: #f9f9fa;
+  width: 100%;
+  bottom: 0;
 }
 footer a {
   color: #c5c5cc;
-  text-decoration: none;
+}
+
+@media screen and (max-width: 600px) {
+  .banner{
+    flex-direction: column;
+  }
+  .banner-content{
+    text-align: center;
+    margin: 0;
+  }
+  .banner-content a{
+    margin-top: 10px;
+    display: inline-block;
+  }
+  .more{
+    flex-direction: column;
+  }
+  .more-side{
+    margin: 20px auto;
+  }
+  main#topic {
+    text-align: justify;
+  }
+  .about {
+    flex-direction: column-reverse;
+  }
+  .about-img {
+    display: flex;
+    justify-content: center;
+  }
+
+  .about-img img {
+    justify-content: center;
+    width: 100%;
+  }
+  .topic-with-aside {
+    flex-direction: column;
+  }
+
+  .struct-img img:hover {
+    transition: 0.3s;
+    transform: scale(1.5);
+  }
+}
+@media screen and (max-width: 992px) {
+  
+  .more{
+    flex-direction: column;
+  }
+  .more-side{
+    margin: 20px auto;
+  }
+  .topic-with-aside {
+    flex-direction: column;
+  }
+  .about-img img {
+    width: 80%;
+  }
+}
+
+/* quiz page */
+.quiz-banner {
+  text-align: center;
+  min-height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.quiz-banner h1 {
+  text-transform: capitalize;
+}
+.info, .questions{
+  margin: 10px 20px;
+  font-size: 20px;
+}
+.form-item{
+  margin: 8px auto;
+}
+.info input, .info label, .questions label{
+  display: block;
+}
+.info .form-item label, .questions label{
+  font-size: 16px;
+}
+.info .form-item input {
+  width: 18em;
+  height: 24px;
+  font-size: 20px;
+  padding: 4px;
+}
+
+.questions input[type=text],.questions input[type=number], select{
+  display: block;
+  width: 18em;
+  height: 24px;
+  font-size: 20px;
+  padding: 4px;
+}
+select{
+  height: 32px;
+}
+
+
+.submit {
+  text-transform: capitalize;
+  font-weight: 900;
+  padding: 8px 16px;
+  color: #ffffff;
+  background: #294f83;
+  font-size: 20px;
+  border: 2px solid white;
+}
+main#enhancements{
+}
+.enhance-banner {
+  text-align: center;
+  min-height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+main#enhancements section{
+  margin: 20px auto;
+}
+.e1 ul, .e2 ul{
+  margin-left: 16px;
+}
+
+
+
+
+
+
+/* more than 100k */
+.about-img img:hover {
+  content: url(../images/duck.gif);
 }
