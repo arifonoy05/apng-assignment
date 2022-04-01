@@ -393,6 +393,7 @@ select{
   border: 2px solid white;
 }
 main#enhancements{
+  height: 90vh;
 }
 .enhance-banner {
   text-align: center;
@@ -407,6 +408,10 @@ main#enhancements section{
 }
 .e1 ul, .e2 ul{
   margin-left: 16px;
+}
+
+footer#enhancements-footer{
+  position: absolute;
 }
 
 
