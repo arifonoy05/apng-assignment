@@ -12,7 +12,7 @@
     />
 
     <!-- Title -->
-    <title>Home | APNG | All You Need To Know</title>
+    <title>Quiz | APNG | All You Need To Know</title>
 
     <!-- Fonts -->
 
@@ -40,37 +40,52 @@
         <h1>quiz</h1>
       </section>
       <section class="quiz">
-        <form action="" class="quiz-form">
+        <h2>Please answer the following questions</h2>
+        <form
+          action="https://mercury.swin.edu.au/it000000/formtest.php"
+          class="quiz-form"
+        >
           <fieldset>
             <legend>Student Information</legend>
             <div class="info">
               <div class="form-item">
                 <label for="fname">First Name</label>
-                <input required
+                <input
+                  required
                   type="text"
                   id="fname"
                   name="fname"
+                  pattern="[a-zA-Z ]{,30}"
+                  maxlength="30"
                   placeholder="First Name"
+                  value="Zahin"
                 />
               </div>
 
               <div class="form-item">
                 <label for="lname">Last Name</label>
-                <input required
+                <input
+                  required
                   type="text"
                   id="lname"
                   name="lname"
+                  pattern="[a-zA-Z- {,30}]"
+                  maxlength="30"
                   placeholder="Last Name"
+                  value="Nafi"
                 />
               </div>
 
               <div class="form-item">
                 <label for="snum">Student Number</label>
-                <input required
+                <input
+                  required
                   id="snum"
                   name="snum"
-                  pattern="[0-9]{7,10}"
+                  pattern="\d{7}|\d{10}"
                   placeholder="Student Number"
+                  title="Student Number must be either 7 or 10 characters "
+                  value="103539510"
                 />
               </div>
             </div>
@@ -81,18 +96,26 @@
             <div class="questions">
               <div class="form-item">
                 <label for="q1">What does PNG stand for?</label>
-                <input required
+                <input
+                  required
                   type="text"
                   id="q1"
                   name="q1"
                   placeholder="Your Answer Here"
+                  value="Portable Network Graphics"
                 />
               </div>
               <div class="form-item">
                 <label>Which browser first implemented support for APNG</label>
                 <label for="q2_1"
-                  ><input required type="radio" name="q2" id="q2_1" value="1" />Mozilla
-                  Firefox</label
+                  ><input
+                    required
+                    type="radio"
+                    name="q2"
+                    id="q2_1"
+                    value="1"
+                    checked
+                  />Mozilla Firefox</label
                 >
                 <label for="q2_2"
                   ><input type="radio" name="q2" id="q2_2" value="2" /> Google
@@ -110,12 +133,12 @@
               <div class="form-item">
                 <label>Who were the creators of APNG?</label>
                 <label for="q3_1"
-                  ><input type="checkbox" name="q3" id="q3_1" /> Stuart
+                  ><input type="checkbox" name="q3" id="q3_1" checked /> Stuart
                   Parmenter</label
                 >
                 <label for="q3_2"
-                  ><input type="checkbox" name="q3" id="q3_2" /> Vladimir
-                  Vukicevic</label
+                  ><input type="checkbox" name="q3" id="q3_2" checked />
+                  Vladimir Vukicevic</label
                 >
                 <label for="q3_3"
                   ><input type="checkbox" name="q3" id="q3_3" /> Dmitri
@@ -128,8 +151,16 @@
               </div>
 
               <div class="form-item">
-                <label for="q4">What year was APNG created?</label>
-                <input type="number" id="q4" name="q4" placeholder="Year" />
+                <fieldset>
+                  <label for="q4">What year was APNG created?</label>
+                  <input
+                    type="number"
+                    id="q4"
+                    name="q4"
+                    placeholder="Year"
+                    value="2004"
+                  />
+                </fieldset>
               </div>
 
               <div class="form-item">
@@ -137,7 +168,7 @@
                 <select name="q5" id="q5">
                   <option value="GIF">GIF</option>
                   <option value="WebP">WebP</option>
-                  <option value="APNG">APNG</option>
+                  <option value="APNG" selected>APNG</option>
                 </select>
               </div>
             </div>
@@ -147,8 +178,10 @@
       </section>
     </main>
     <footer>
-      <span>email: &nbsp</span>
-      <a href="mailto:103539510@student.swin.edu.au">103539510@student.swin.edu.au</a>
+      <span>email: &nbsp;</span>
+      <a href="mailto:103539510@student.swin.edu.au"
+        >103539510@student.swin.edu.au</a
+      >
     </footer>
   </body>
 </html>

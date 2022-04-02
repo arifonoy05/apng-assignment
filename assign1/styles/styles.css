@@ -3,7 +3,7 @@ html {
   margin: 0;
   padding: 0;
 }
-*::selection{
+*::selection {
   background-color: #294f83;
   color: #ffffff;
 }
@@ -105,8 +105,7 @@ main#topic section {
 div.topic-content div {
   margin-bottom: 30px;
 }
-section {
-}
+
 /* home banner */
 .banner {
   display: flex;
@@ -160,9 +159,6 @@ section {
   text-transform: uppercase;
   font-size: 40px;
 }
-.intro p {
-  /* background-color: white; */
-}
 .intro-divider {
   display: block;
   margin: 12px 0;
@@ -192,8 +188,6 @@ section {
 }
 .more h2 span {
   text-transform: uppercase;
-}
-.more-side p {
 }
 .more-side ol {
   margin-left: 14px;
@@ -225,7 +219,6 @@ section {
 .about-img img {
   width: 60%;
 }
-
 
 /* topic history */
 .history {
@@ -283,21 +276,27 @@ footer a {
 }
 
 @media screen and (max-width: 600px) {
-  .banner{
+  nav a {
+    padding: 8px 6px;
+  }
+  .banner {
     flex-direction: column;
   }
-  .banner-content{
+  .banner-content {
     text-align: center;
     margin: 0;
   }
-  .banner-content a{
+  .banner-image {
+    margin: 0;
+  }
+  .banner-content a {
     margin-top: 10px;
     display: inline-block;
   }
-  .more{
+  .more {
     flex-direction: column;
   }
-  .more-side{
+  .more-side {
     margin: 20px auto;
   }
   main#topic {
@@ -325,11 +324,10 @@ footer a {
   }
 }
 @media screen and (max-width: 992px) {
-  
-  .more{
+  .more {
     flex-direction: column;
   }
-  .more-side{
+  .more-side {
     margin: 20px auto;
   }
   .topic-with-aside {
@@ -351,17 +349,24 @@ footer a {
 .quiz-banner h1 {
   text-transform: capitalize;
 }
-.info, .questions{
+.quiz h2{
+  margin: 4px auto 6px;
+}
+.info,
+.questions {
   margin: 10px 20px;
   font-size: 20px;
 }
-.form-item{
+.form-item {
   margin: 8px auto;
 }
-.info input, .info label, .questions label{
+.info input,
+.info label,
+.questions label {
   display: block;
 }
-.info .form-item label, .questions label{
+.info .form-item label,
+.questions label {
   font-size: 16px;
 }
 .info .form-item input {
@@ -371,17 +376,21 @@ footer a {
   padding: 4px;
 }
 
-.questions input[type=text],.questions input[type=number], select{
+.questions input[type="text"],
+.questions input[type="number"],
+select {
   display: block;
   width: 18em;
   height: 24px;
   font-size: 20px;
   padding: 4px;
 }
-select{
+select {
   height: 32px;
 }
-
+.form-item fieldset{
+  border: none;
+}
 
 .submit {
   text-transform: capitalize;
@@ -392,7 +401,7 @@ select{
   font-size: 20px;
   border: 2px solid white;
 }
-main#enhancements{
+main#enhancements {
   height: 90vh;
 }
 .enhance-banner {
@@ -403,21 +412,17 @@ main#enhancements{
   align-items: center;
 }
 
-main#enhancements section{
+main#enhancements section {
   margin: 20px auto;
 }
-.e1 ul, .e2 ul{
+.e1 ul,
+.e2 ul {
   margin-left: 16px;
 }
 
-footer#enhancements-footer{
+footer#enhancements-footer {
   position: absolute;
 }
-
-
-
-
-
 
 /* more than 100k */
 .about-img img:hover {
