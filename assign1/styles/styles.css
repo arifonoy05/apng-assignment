@@ -3,10 +3,15 @@ html {
   margin: 0;
   padding: 0;
 }
+
+/* pseudo element */
 *::selection {
   background-color: #294f83;
   color: #ffffff;
 }
+/* pseudo element */
+
+/* general styles */
 a {
   text-decoration: none;
   color: #294f83;
@@ -52,11 +57,11 @@ th {
   background-color: #294f83;
   color: white;
 }
-/* body style */
 body {
   color: #333333;
   font-family: "Lato", sans-serif;
 }
+/* general styles */
 
 /* header and nav */
 header {
@@ -87,6 +92,7 @@ nav a:hover {
   background-color: #333333ad;
   color: #f9f9fa;
 }
+/* header and nav */
 
 /* main */
 main {
@@ -98,7 +104,9 @@ main {
   background-repeat: no-repeat;
   background-size: cover;
 }
+/* main */
 
+/* home page */
 main#topic section {
   margin-bottom: 30px;
 }
@@ -106,7 +114,6 @@ div.topic-content div {
   margin-bottom: 30px;
 }
 
-/* home banner */
 .banner {
   display: flex;
   justify-content: space-between;
@@ -148,7 +155,6 @@ div.topic-content div {
   background-color: #294f83;
 }
 
-/* home intro */
 .intro {
   padding: 20px 0;
 }
@@ -164,7 +170,6 @@ div.topic-content div {
   margin: 12px 0;
 }
 
-/* home more content */
 .more {
   padding: 0 0 40px;
   display: flex;
@@ -197,9 +202,9 @@ div.topic-content div {
   font-weight: bold;
   color: #475889;
 }
+/* home page */
 
-/* topic */
-/* topic introduction */
+/* topic page */
 .about {
   display: flex;
   flex-direction: row;
@@ -219,8 +224,6 @@ div.topic-content div {
 .about-img img {
   width: 60%;
 }
-
-/* topic history */
 .history {
   margin-top: 10px;
 }
@@ -258,6 +261,99 @@ main#topic table {
 .browser-table {
   overflow-x: auto;
 }
+/* topic page */
+
+/* quiz page */
+.quiz-banner {
+  text-align: center;
+  min-height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.quiz-banner h1 {
+  text-transform: capitalize;
+}
+.quiz h2 {
+  margin: 4px auto 6px;
+}
+.info,
+.questions {
+  margin: 10px 20px;
+  font-size: 20px;
+}
+.form-item {
+  margin: 8px auto;
+}
+.info input,
+.info label,
+.questions label {
+  display: block;
+}
+.info .form-item label,
+.questions label {
+  font-size: 16px;
+}
+.info .form-item input {
+  width: 18em;
+  height: 24px;
+  font-size: 20px;
+  padding: 4px;
+}
+
+.questions input[type="text"],
+.questions input[type="number"],
+select {
+  display: block;
+  width: 18em;
+  height: 24px;
+  font-size: 20px;
+  padding: 4px;
+}
+select {
+  height: 32px;
+}
+.form-item fieldset {
+  border: none;
+}
+
+.submit {
+  text-transform: capitalize;
+  font-weight: 900;
+  padding: 8px 16px;
+  color: #ffffff;
+  background: #294f83;
+  font-size: 20px;
+  border: 2px solid white;
+}
+/* quiz page */
+
+/* enhancements page */
+main#enhancements {
+  height: 90vh;
+}
+.enhance-banner {
+  text-align: center;
+  min-height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+main#enhancements section {
+  margin: 20px auto;
+}
+.e1 ul,
+.e2 ul {
+  margin-left: 16px;
+}
+
+footer#enhancements-footer {
+  position: absolute;
+}
+/* enhancements page */
+
+
 
 /* footer */
 footer {
@@ -274,7 +370,9 @@ footer {
 footer a {
   color: #c5c5cc;
 }
+/* footer */
 
+/* responsive */
 @media screen and (max-width: 600px) {
   nav a {
     padding: 8px 6px;
@@ -337,94 +435,10 @@ footer a {
     width: 80%;
   }
 }
-
-/* quiz page */
-.quiz-banner {
-  text-align: center;
-  min-height: 80px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.quiz-banner h1 {
-  text-transform: capitalize;
-}
-.quiz h2{
-  margin: 4px auto 6px;
-}
-.info,
-.questions {
-  margin: 10px 20px;
-  font-size: 20px;
-}
-.form-item {
-  margin: 8px auto;
-}
-.info input,
-.info label,
-.questions label {
-  display: block;
-}
-.info .form-item label,
-.questions label {
-  font-size: 16px;
-}
-.info .form-item input {
-  width: 18em;
-  height: 24px;
-  font-size: 20px;
-  padding: 4px;
-}
-
-.questions input[type="text"],
-.questions input[type="number"],
-select {
-  display: block;
-  width: 18em;
-  height: 24px;
-  font-size: 20px;
-  padding: 4px;
-}
-select {
-  height: 32px;
-}
-.form-item fieldset{
-  border: none;
-}
-
-.submit {
-  text-transform: capitalize;
-  font-weight: 900;
-  padding: 8px 16px;
-  color: #ffffff;
-  background: #294f83;
-  font-size: 20px;
-  border: 2px solid white;
-}
-main#enhancements {
-  height: 90vh;
-}
-.enhance-banner {
-  text-align: center;
-  min-height: 80px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-main#enhancements section {
-  margin: 20px auto;
-}
-.e1 ul,
-.e2 ul {
-  margin-left: 16px;
-}
-
-footer#enhancements-footer {
-  position: absolute;
-}
+/* responsive */
 
 /* more than 100k */
 .about-img img:hover {
   content: url(../images/duck.gif);
 }
+/* more than 100k */
