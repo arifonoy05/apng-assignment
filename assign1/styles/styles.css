@@ -57,6 +57,9 @@ th {
   background-color: #294f83;
   color: white;
 }
+td{
+  background-color: #efefef;
+}
 body {
   color: #333333;
   font-family: "Lato", sans-serif;
@@ -101,6 +104,7 @@ main {
   overflow: hidden;
   box-sizing: border-box;
   background: url(./images/white.jpg);
+  background-attachment: fixed;
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -148,10 +152,12 @@ div.topic-content div {
   color: #294f83;
   transition: 0.4s;
   font-size: 20px;
-  border: 2px solid white;
+  border: 2px solid transparent;
+  border-radius: 20px 0 20px 0;
 }
 .banner-content a:hover {
   color: #ffffff;
+  border: 2px solid white;
   background-color: #294f83;
 }
 
