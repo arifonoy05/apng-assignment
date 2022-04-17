@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Meta Tags -->
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="Zahin Un Nafi" />
+    <meta
+      name="description"
+      content="All About APNG (Animated Portable Network Graphics)"
+    />
+
+    <!-- Title -->
+    <title>Quiz | APNG | All You Need To Know</title>
+
+    <!-- Fonts -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="styles/styles.css" />
+  </head>
+  <body>
+    <header>
+      <nav>
+        <a href="index.html">home</a>
+        <a href="topic.html">topic</a>
+        <a class="active" href="quiz.html">quiz</a>
+        <a href="enhancements.html">enhancements</a>
+        <a href="result.html">result</a>
+      </nav>
+    </header>
+    <main>
+      <section class="quiz-banner">
+        <h1>quiz</h1>
+      </section>
+      <section class="quiz">
+        <h2>Please answer the following questions</h2>
+        <form
+          method="post"
+          class="quiz-form"
+          id="quizForm"
+          action="result.html"
+        >
+          <fieldset>
+            <legend>Student Information</legend>
+            <div class="info">
+              <div class="form-item">
+                <label for="fname">First Name</label>
+                <input
+                  required
+                  type="text"
+                  id="fname"
+                  name="fname"
+                  pattern="[a-zA-Z -][^0-9]{1,30}"
+                  maxlength="30"
+                  placeholder="First Name"
+                  title="Only alpha characters, spaces and hyphen allowed"
+                />
+              </div>
+
+              <div class="form-item">
+                <label for="lname">Last Name</label>
+                <input
+                  required
+                  type="text"
+                  id="lname"
+                  name="lname"
+                  pattern="[a-zA-Z -][^0-9]{1,30}"
+                  maxlength="30"
+                  placeholder="Last Name"
+                  title="Only alpha characters, spaces and hyphen allowed"
+                />
+              </div>
+
+              <div class="form-item">
+                <label for="snum">Student Number</label>
+                <input
+                  required
+                  id="snum"
+                  name="snum"
+                  pattern="\d{7}|\d{10}"
+                  placeholder="Student Number"
+                  title="Student Number must be either 7 or 10 characters "
+                />
+              </div>
+            </div>
+          </fieldset>
+          <fieldset>
+            <legend>Questions</legend>
+
+            <div class="questions">
+              <div class="form-item">
+                <fieldset>
+                  <label for="q1">Question 1: What does PNG stand for?</label>
+                  <input
+                    required
+                    type="text"
+                    id="q1"
+                    name="q1"
+                    placeholder="Your Answer Here"
+                  />
+                </fieldset>
+              </div>
+              <div id="ques2" class="form-item">
+                <fieldset>
+                  <label
+                    >Question 2: Which browser first implemented support for APNG</label
+                  >
+                  <label for="q2_1"
+                    ><input
+                      required
+                      type="radio"
+                      name="q2"
+                      id="q2_1"
+                      value="Mozilla Firefox"
+                    />Mozilla Firefox</label
+                  >
+                  <label for="q2_2"
+                    ><input type="radio" name="q2" id="q2_2" value="Google Chrome" /> Google
+                    Chrome</label
+                  >
+                  <label for="q2_3"
+                    ><input type="radio" name="q2" id="q2_3" value="Internet Explorer" />
+                    Internet Explorer</label
+                  >
+                  <label for="q2_4"
+                    ><input type="radio" name="q2" id="q2_4" value="Opera" />
+                    Opera</label
+                  >
+                </fieldset>
+              </div>
+              <div id="ques3" class="form-item">
+                <fieldset>
+                  <label>Question 3: Who were the creators of APNG?</label>
+                  <label for="q3_1"
+                    ><input type="checkbox" name="q3[]" class="checkQ" id="q3_1" value="Stuart Parmenter"  /> Stuart
+                    Parmenter</label
+                  >
+                  <label for="q3_2"
+                    ><input type="checkbox" name="q3[]" class="checkQ" id="q3_2" value="Vladimir Vukicevic" /> Vladimir
+                    Vukicevic</label
+                  >
+                  <label for="q3_3"
+                    ><input type="checkbox" name="q3[]" class="checkQ" id="q3_3" value="Dmitri Alenkov" /> Dmitri
+                    Alenkov</label
+                  >
+                  <label for="q3_4"
+                    ><input type="checkbox" name="q3[]" class="checkQ" id="q3_4" value="Alexander Parelis"/> Alexander
+                    Parelis</label
+                  >
+                </fieldset>
+              </div>
+
+              <div class="form-item">
+                <fieldset>
+                  <label for="q4">Question 4: What year was APNG created?</label>
+                  <input type="number" id="q4" name="q4" maxlength="4" min="1900" max="2222"  value="1990" placeholder="Year" required />
+                </fieldset>
+              </div>
+
+              <div class="form-item">
+                <fieldset>
+                  <label for="q5"
+                    >Question 5: Which format has the smallest file size?</label
+                  >
+                  <select name="q5" id="q5" required>
+                    <option value="">-- Please Select --</option>
+                    <option value="GIF">GIF</option>
+                    <option value="WebP">WebP</option>
+                    <option value="APNG">APNG</option>
+                  </select>
+                </fieldset>
+              </div>
+            </div>
+          </fieldset>
+
+          <div class="score">
+            <h4>You scored <span id="grade"></span>, you must score 2 to be able make submission!</h4>
+          </div>
+          <button id="submitbtn" class="submit" type="submit">Submit</button>
+        </form>
+      </section>
+    </main>
+    <footer>
+      <span>email: &nbsp;</span>
+      <a href="mailto:103539510@student.swin.edu.au"
+        >103539510@student.swin.edu.au</a
+      >
+    </footer>
+
+    <script src="scripts/quiz.js"></script>
+    <script src="scripts/enhancements.js"></script>
+  </body>
+</html>

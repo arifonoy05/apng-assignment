@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Meta Tags -->
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="Zahin Un Nafi" />
+    <meta
+      name="description"
+      content="All About APNG (Animated Portable Network Graphics)"
+    />
+
+    <!-- Title -->
+    <title>Topic | APNG | All You Need To Know</title>
+
+    <!-- Fonts -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="styles/styles.css" />
+  </head>
+  <body>
+    <header>
+      <nav>
+        <a href="index.html">home</a>
+        <a class="active" href="topic.html">topic</a>
+        <a href="quiz.html">quiz</a>
+        <a href="enhancements.html">enhancements</a>
+      </nav>
+    </header>
+    <main id="topic">
+      <section class="about">
+        <div class="about-content">
+          <h1>all about <span>apng</span></h1>
+          <p>
+            APNG is an extension of the PNG format, adding support for animated
+            images. It is intended to be a replacement for simple animated
+            images that have traditionally used the GIF format, while adding
+            support for 24-bit images and 8-bit transparency. APNG is a simpler
+            alternative to MNG, providing a spec suitable for the most common
+            usage of animated images on the Internet. APNG is
+            backwards-compatible with PNG; any PNG decoder should be able to
+            ignore the APNG-specific chunks and display a single image.
+          </p>
+        </div>
+        <div class="about-img">
+          <img src="images/duck.png" alt="" />
+        </div>
+      </section>
+      <section class="history">
+        <h2>history</h2>
+        <p>
+          The APNG standard was created in 2004 by Mozilla's Stuart Parmenter
+          and Vladimir Vukievi to store animations for interfaces like
+          throbbers. As a result of the large file size required for the entire
+          MNG decoder library (300 KB), Mozilla stopped support for MNG
+          animations in May 2003.
+        </p>
+        <p>
+          PNG and MNG users and maintainers reacted coldly to APNG. It was
+          created as a single-image format. No further changes to the format
+          allow software to distinguish between animated and non-animated
+          photographs. Some of the major issues were programmes' inability to
+          negotiate for PNG and APNG, or even warn users that there are
+          additional frames. The APNG proponents just introduced a separate MIME
+          type (image/apng) while insisting on the usage of the.png extension
+          instead of.apng, resulting in the format not being accepted by the PNG
+          purists.
+        </p>
+        <p>
+          On April 20, 2007, the PNG group officially rejected APNG. Several
+          more methods for recommending a basic animated graphics format based
+          on PNG have been proposed.
+        </p>
+      </section>
+      <section class="topic-with-aside">
+        <div class="topic-content">
+          <div class="impl">
+            <h2><span>apng</span>'s implementation</h2>
+            <p>
+              On March 23, 2007, Firefox 3 trunk builds featured APNG support.
+              Mozilla's contribution to the APNG standard matches Netscape's
+              previous popularisation of animated GIFs. WorldDMB included APNG
+              as a backwards compatible extension in 2008 to facilitate
+              animation. On 2016, Apple introduced APNG the default format for
+              animated stickers in iOS 10. On March 15, 2017, Chromium included
+              APNG.
+            </p>
+          </div>
+          <div class="struct">
+            <div class="struct-content">
+              <h2><span>apng</span>'s structure</h2>
+              <p>
+                Technically, the APNG data stream closely resembles the
+                conventional PNG data stream, the structure of which may be
+                found in the official picture format standards. The Animated
+                Portable Network Graphics format, on the other hand, offers
+                three extra kinds of information blocks (chunks) that
+                characterise the animation and give additional frame data.
+              </p>
+              <p>
+                Animation control chunk (acTL): This tells the parser that the
+                PNG is animated. It displays the number of frames in the
+                animation and specifies how often the animation should be
+                performed before it ends.
+              </p>
+              <p>
+                Frame control chunk (fcTL): The frame control chunk comes before
+                each frame of the APNG animation. It comprises data, the most
+                essential of which is the frame's display time.
+              </p>
+              <p>
+                Frame data chunk (fdAT): Frame data chunks are fundamentally
+                comparable to regular PNG image data blocks (IDAT), but they
+                also include a sequence number. The corresponding number is also
+                automatically allocated to the previous fcTL block, allowing the
+                various frames to be re-ordered at any moment.
+              </p>
+              <div class="struct-img">
+                <figure>
+                  <img src="images/structure.png" alt="" />
+                  <figcaption>Structure of APNG</figcaption>
+                </figure>
+              </div>
+            </div>
+          </div>
+        </div>
+        <aside class="topic-aside">
+          <img src="./images/aside.gif" alt="aside.gif" />
+          <p>
+            PNG, GIF, APNG are all media file types, each has different uses.
+            While PNG is an image format, GIF and APNG supports animation.
+          </p>
+          <p>PNG vs GIF vs APNG</p>
+          <dl>
+            <dt>PNG</dt>
+            <dd>Portable Network Graphics</dd>
+            <dd>Image format</dd>
+            <dd>Compression is lossless</dd>
+            <dd>Supports more colors</dd>
+            <dt>GIF</dt>
+            <dd>Graphics Interchange Format</dd>
+            <dd>Bitmap image format</dd>
+            <dd>Compression is lossless</dd>
+            <dd>Supports animation</dd>
+            <dt>APNG</dt>
+            <dd>Animated Portable Network Graphics</dd>
+            <dd>Animated image format, extension of PNG</dd>
+            <dd>Lossless compression</dd>
+            <dd>Supports more colors, supports animation</dd>
+          </dl>
+          <hr />
+          <p>References used:</p>
+          <ol>
+            <li>
+              <a
+                href="https://l.facebook.com/l.php?u=https%3A%2F%2Fwiki.mozilla.org%2FAPNG_Specification%3Ffbclid%3DIwAR2gjzTo4kdiGeK2XJJy-Bs5eZZRUB-Uu59kvbGlXXsQWleRWeV0fU5Peag&h=AT1D5o1rZIKlwJwgtg-ANnumIKNSldRS6Iil9_WARfGxK6dN6VKUHp2ucQz5Vlv5ZA8QQuKv39pjmehDj9e_Jd4KikZ_7lYuWc-eHDKE2bKVCQJaqyKehYt6K_vcIJFUFstZVQ"
+                >MozillaWiki</a
+              >
+            </li>
+            <li>
+              <a
+                href="https://l.facebook.com/l.php?u=https%3A%2F%2Fen.wikipedia.org%2Fwiki%2FAPNG%3Ffbclid%3DIwAR3K4IHpu32ZEfZsFGOCdXIfgFQK7NRmc21KnHtKbU8CmvGi85JM6p39JtU&h=AT1D5o1rZIKlwJwgtg-ANnumIKNSldRS6Iil9_WARfGxK6dN6VKUHp2ucQz5Vlv5ZA8QQuKv39pjmehDj9e_Jd4KikZ_7lYuWc-eHDKE2bKVCQJaqyKehYt6K_vcIJFUFstZVQ"
+                >Wikipedia</a
+              >
+            </li>
+            <li>
+              <a
+                href="https://l.facebook.com/l.php?u=https%3A%2F%2Fwww.ionos.com%2Fdigitalguide%2Fwebsites%2Fweb-design%2Fwhat-is-apng%2F%3Ffbclid%3DIwAR3dlrvZEZ0LppgluX1HdHhgpSCGLB5ODnspqaBq_ceAt9EX3pTWJVf6OXk&h=AT1D5o1rZIKlwJwgtg-ANnumIKNSldRS6Iil9_WARfGxK6dN6VKUHp2ucQz5Vlv5ZA8QQuKv39pjmehDj9e_Jd4KikZ_7lYuWc-eHDKE2bKVCQJaqyKehYt6K_vcIJFUFstZVQ"
+                >Ionos</a
+              >
+            </li>
+          </ol>
+        </aside>
+      </section>
+      <section class="gif">
+        <h2><span>apng</span> vs <span>gif</span></h2>
+        <p>
+          In a comparison made between GIF, APNG and WebP, APNG had the lowest
+          file size.
+        </p>
+        <div class="gif-image">
+          <table>
+            <thead>
+              <tr>
+                <th></th>
+                <th>APNG</th>
+                <th>GIF</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Publication</td>
+                <td>2004</td>
+                <td>1987</td>
+              </tr>
+              <tr>
+                <td>Color Depth</td>
+                <td>24 bit</td>
+                <td>8 bit</td>
+              </tr>
+              <tr>
+                <td>Frame Rate</td>
+                <td>Unlimited</td>
+                <td>10 frames per second</td>
+              </tr>
+              <tr>
+                <td>Transparency</td>
+                <td>Complete and Partial</td>
+                <td>Complete</td>
+              </tr>
+              <tr>
+                <td>Compression</td>
+                <td>Very Good</td>
+                <td>Good</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+      <section class="browser">
+        <h2>browser support for <span>apng</span></h2>
+        <h4>List of Browsers that supports <span>apng</span></h4>
+
+        <div class="browser-table">
+          <table>
+            <thead>
+              <tr>
+                <th>Field</th>
+                <th>Software</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td rowspan="9">
+                  <p>Web browsers</p>
+                </td>
+                <td>
+                  <p>Mozilla Firefox</p>
+                  <small>(Gecko layout engine)</small>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>SeaMonkey</p>
+                  <small>(Gecko layout engine)</small>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>Iceweasel and other Debian rebrandings</p>
+                  <small>(Gecko layout engine)</small>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>Safari</p>
+                  <small>(WebKit layout engine)</small>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>Google Chrome and Chromium</p>
+                  <small>(Blink layout engine)</small>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>Microsoft Edge</p>
+                  <small>(Blink layout engine)</small>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>Opera v12 and earlier</p>
+                  <small>( Presto layout engine)</small>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>Opera 15 and later</p>
+                  <small>(Blink layout engine)</small>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>Pale Moon</p>
+                  <small>(Goanna layout engine)</small>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <span>email: &nbsp;</span>
+      <a href="mailto:103539510@student.swin.edu.au"
+        >103539510@student.swin.edu.au</a
+      >
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Meta Tags -->
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="Zahin Un Nafi" />
+    <meta
+      name="description"
+      content="All About APNG (Animated Portable Network Graphics)"
+    />
+
+    <!-- Title -->
+    <title>Home | APNG | All You Need To Know</title>
+
+    <!-- Fonts -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="styles/styles.css" />
+  </head>
+  <body>
+    <header>
+      <nav>
+        <a href="index.html">home</a>
+        <a href="topic.html">topic</a>
+        <a href="quiz.html">quiz</a>
+        <a href="enhancements.html">enhancements</a>
+        <a class="active" href="result.html">result</a>
+      </nav>
+    </header>
+    <main>
+      <div id="result">
+        <h2 class="title">Student Information</h2>
+        <p>Name: <span id="r_fname"></span>&nbsp;<span id="r_lname"></span></p>
+        <p>ID: <span id="r_snum"></span></p>
+
+        <h2 class="title">Answers</h2>
+        <table>
+          <tr>
+            <td>Q1:</td>
+            <td id="q1"></td>
+          </tr>
+          <tr>
+            <td>Q2</td>
+            <td id="q2"></td>
+          </tr>
+          <tr>
+            <td>Q3</td>
+            <td id="q3"></td>
+          </tr>
+          <tr>
+            <td>Q4</td>
+            <td id="q4"></td>
+          </tr>
+          <tr>
+            <td>Q5</td>
+            <td id="q5"></td>
+          </tr>
+        </table>
+
+        <p>Correct answers: <span id="score"></span></p>
+
+        <p>Attempts: <span id="attempt"></span></p>
+      </div>
+      <div id="take">
+        <p>Please take the quiz first!</p>
+      </div>
+      <button class="submit" id="trybtn"></button>
+    </main>
+    <footer>
+      <span>email: &nbsp;</span>
+      <a href="mailto:103539510@student.swin.edu.au"
+        >103539510@student.swin.edu.au</a
+      >
+    </footer>
+
+    <script src="scripts/quiz.js"></script>
+  </body>
+</html>
