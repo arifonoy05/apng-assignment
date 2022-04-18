@@ -1,0 +1,1 @@
+document.querySelector("#score").classList.add("score");

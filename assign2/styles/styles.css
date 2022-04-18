@@ -57,7 +57,7 @@ th {
   background-color: #294f83;
   color: white;
 }
-td{
+td {
   background-color: #efefef;
 }
 body {
@@ -333,10 +333,14 @@ select {
   font-size: 20px;
   border: 2px solid white;
 }
-
-.score{
+#score {
   display: none;
-  border: 1px solid black;
+}
+.score {
+  border: 1px solid red;
+  padding: 10px 20px;
+  margin: 10px auto;
+  color: red;
 }
 /* quiz page */
 
@@ -364,8 +368,6 @@ footer#enhancements-footer {
   position: absolute;
 }
 /* enhancements page */
-
-
 
 /* footer */
 footer {
@@ -455,20 +457,23 @@ footer a {
 }
 /* more than 100k */
 
-.emptyInput{
+.emptyInput {
   background-color: #e1373790;
 }
-.emptyInput::placeholder{
+.emptyInput::placeholder {
   color: black;
 }
 
-#take{
+#take {
   margin-top: 2em;
   margin-bottom: 0.5rem;
 }
-#result .title{
+#result .title {
   margin-top: 40px;
 }
-#trybtn{
+#trybtn {
   margin-top: 2rem;
+}
+.result_table{
+  margin-bottom: 20px;
 }

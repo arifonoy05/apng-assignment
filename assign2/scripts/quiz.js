@@ -80,6 +80,7 @@ if (form) {
           alert(
             "You already took the quiz twice, you cannot take the quiz again!"
           );
+          location.reload();
         } else {
           // push data
           console.log("push new data and submit");
@@ -103,7 +104,7 @@ function evaluate() {
 
   if (grade < 3) {
     document.getElementById("grade").innerHTML = grade;
-    document.getElementsByClassName("score")[0].style.display = "block";
+    document.getElementById("score").style.display = "block";
   }
   return grade;
 }
