@@ -49,38 +49,47 @@ if (form) {
         localStorage.setItem("resultList", JSON.stringify(resultList));
         localStorage.setItem("curr", JSON.stringify(newAttempt.snum));
         console.log(JSON.parse(localStorage.resultList));
+
+        this.submit();
       } else {
         // localstorage contains data
         console.log("data exists");
+        var sameID = false;
 
         // check if id exists in localstorage
         // overwrite if it does, otherwise append
         const data = JSON.parse(localStorage.resultList);
         console.log(data);
         resultList = data;
-
         resultList.map((item) => {
           if (item.snum == newAttempt.snum) {
             console.log("initiate overwrite!");
+            console.log(item);
             // remove existing data
-            resultList.pop(resultList.indexOf(item));
-            // check if number of attempts for this user is 2 at max
-            if (newAttempt.attempt < 2) {
-              newAttempt.attempt += 1;
-            } else {
-              newAttempt.attempt = 1;
-            }
+            newAttempt.attempt = item.attempt + 1;
+            resultList.splice(resultList.indexOf(item), 1);
+            sameID = true;
           }
         });
 
-        // push data
-        console.log("push new data and submit");
-        resultList.push(newAttempt);
-        localStorage.setItem("resultList", JSON.stringify(resultList));
-        localStorage.setItem("curr", JSON.stringify(newAttempt.snum));
-        console.log(localStorage.resultList);
+        if (!sameID) {
+          newAttempt.attempt = 1;
+        }
+
+        if (newAttempt.attempt > 2) {
+          alert(
+            "You already took the quiz twice, you cannot take the quiz again!"
+          );
+        } else {
+          // push data
+          console.log("push new data and submit");
+          resultList.push(newAttempt);
+          localStorage.setItem("resultList", JSON.stringify(resultList));
+          localStorage.setItem("curr", JSON.stringify(newAttempt.snum));
+          console.log(localStorage.resultList);
+          this.submit();
+        }
       }
-      this.submit();
 
       // if attempt == 0 FOR THIS SPECIFIC USER_ID, attempt += 1, store new result, submit form
       // if attempt > 2 FOR THIS SPECIFIC USER_ID, attempt += 1, store result, submit form
@@ -244,8 +253,13 @@ if (localStorage.getItem("curr") != null) {
   document.getElementById("score").innerHTML = data.grade;
   document.getElementById("attempt").innerHTML = data.attempt;
 
+
   const trybtn = document.getElementById("trybtn");
   trybtn.innerText = "Try Again?";
+
+  if(data.attempt == 2){
+    trybtn.style.display = "none";  
+  }
 
   trybtn.addEventListener("click", function () {
     window.location.href = "quiz.html";
