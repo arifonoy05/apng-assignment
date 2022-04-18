@@ -477,3 +477,28 @@ footer a {
 .result_table{
   margin-bottom: 20px;
 }
+
+#timer {
+  display: none;
+  position: absolute;
+  right: 5%;
+  border: 1px solid;
+  padding: 12px 13px;
+  border-radius: 31px;
+}
+.warn{
+  color: red;
+  border: 1px solid red;
+  animation: blink 0.5s linear infinite;
+}
+.blink {
+}
+
+@keyframes blink {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}

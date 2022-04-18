@@ -12,7 +12,7 @@
     />
 
     <!-- Title -->
-    <title>Result | APNG | All You Need To Know</title>
+    <title>Enhancements2 | APNG | All You Need To Know</title>
 
     <!-- Fonts -->
 
@@ -29,51 +29,18 @@
   <body>
     <header>
       <nav>
-        <a href="index.html">home</a>
+        <a class="active" href="index.html">home</a>
         <a href="topic.html">topic</a>
         <a href="quiz.html">quiz</a>
         <a href="enhancements.html">enhancements</a>
-        <a class="active" href="result.html">result</a>
+        <a href="result.html">result</a>
       </nav>
     </header>
     <main>
-      <div id="result">
-        <h2 class="title">Student Information</h2>
-        <p>Name: <span id="r_fname"></span>&nbsp;<span id="r_lname"></span></p>
-        <p>ID: <span id="r_snum"></span></p>
-
-        <h2 class="title">Answers</h2>
-        <table class="result_table">
-          <tr>
-            <td>Q1:</td>
-            <td id="q1"></td>
-          </tr>
-          <tr>
-            <td>Q2</td>
-            <td id="q2"></td>
-          </tr>
-          <tr>
-            <td>Q3</td>
-            <td id="q3"></td>
-          </tr>
-          <tr>
-            <td>Q4</td>
-            <td id="q4"></td>
-          </tr>
-          <tr>
-            <td>Q5</td>
-            <td id="q5"></td>
-          </tr>
-        </table>
-
-        <p>Correct answers: <span id="score"></span></p>
-
-        <p>Attempts: <span id="attempt"></span></p>
-      </div>
-      <div id="take">
-        <p>Please take the quiz first!</p>
-      </div>
-      <button class="submit" id="trybtn"></button>
+        <section>
+            1. quiz auto submits after 30sec
+            2. used querySelector method to change style for timer
+        </section>
     </main>
     <footer>
       <span>email: &nbsp;</span>
@@ -81,7 +48,5 @@
         >103539510@student.swin.edu.au</a
       >
     </footer>
-
-    <script src="scripts/quiz.js"></script>
   </body>
 </html>
