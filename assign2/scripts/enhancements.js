@@ -1,6 +1,6 @@
 // timer
 function Timer() {
-  var counter = 3;
+  var counter = 30;
   var myTimer = setInterval(function (e) {
     document.querySelector("#timer").style.display = "block";
     document.querySelector("#timer").innerHTML = counter;
