@@ -25,16 +25,21 @@ const score = {
 
 const form = document.getElementById("quizForm");
 if (form) {
-  form.addEventListener("submit", handleFormSubmit(e) );
+  form.addEventListener("submit", handleFormSubmit);
 }
 
-function handleFormSubmit (e) {
+function handleFormSubmit(e) {
   grade = evaluate();
-  e.preventDefault();
-  if (!checkAnswerForCheckbox()) {
-    return;
+  // e.preventDefault();
+
+  if(!emptyInfo()){
+    return 0;
   }
-  if (grade >= 2) {
+
+  if (!checkAnswerForCheckbox()) {
+    return 0;
+  }
+  if (grade > 0) {
     student.fname = document.getElementById("fname").value;
     student.lname = document.getElementById("lname").value;
     student.snum = document.getElementById("snum").value;
@@ -53,7 +58,8 @@ function handleFormSubmit (e) {
       localStorage.setItem("curr", JSON.stringify(newAttempt.snum));
       console.log(JSON.parse(localStorage.resultList));
 
-      this.submit();
+      form.submit();
+      return 1;
     } else {
       // localstorage contains data
       console.log("data exists");
@@ -91,14 +97,31 @@ function handleFormSubmit (e) {
         localStorage.setItem("resultList", JSON.stringify(resultList));
         localStorage.setItem("curr", JSON.stringify(newAttempt.snum));
         console.log(localStorage.resultList);
-        this.submit();
+        form.submit();
+        return 1;
       }
     }
 
     // if attempt == 0 FOR THIS SPECIFIC USER_ID, attempt += 1, store new result, submit form
     // if attempt > 2 FOR THIS SPECIFIC USER_ID, attempt += 1, store result, submit form
     // else record as new user and attept == 1, store result, submit form
-  } else alert("You must get atleast 2 correct answers!");
+  } else {
+    alert("You must get atleast 2 correct answers!");
+    document.getElementById("submitbtn").style.display = "none";
+    return 0;
+  }
+}
+
+function emptyInfo(){
+  const fname = document.getElementById("fname").value;
+  const lname = document.getElementById("lname").value;
+  const snum = document.getElementById("snum").value;
+
+  if(fname == "" || lname == "" || snum == ""){
+    alert("Student information is missing!");
+    return false;
+  }
+  else return true;
 }
 
 function evaluate() {
@@ -252,15 +275,14 @@ if (localStorage.getItem("curr") != null) {
   document.getElementById("q4").innerHTML = data.score.q4;
   document.getElementById("q5").innerHTML = data.score.q5;
 
-  document.getElementById("score").innerHTML = data.grade;
+  document.getElementById("grade").innerHTML = data.grade;
   document.getElementById("attempt").innerHTML = data.attempt;
-
 
   const trybtn = document.getElementById("trybtn");
   trybtn.innerText = "Try Again?";
 
-  if(data.attempt == 2){
-    trybtn.style.display = "none";  
+  if (data.attempt == 2) {
+    trybtn.style.display = "none";
   }
 
   trybtn.addEventListener("click", function () {

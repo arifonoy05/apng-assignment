@@ -359,9 +359,9 @@ main#enhancements {
 main#enhancements section {
   margin: 20px auto;
 }
-.e1 ul,
-.e2 ul {
-  margin-left: 16px;
+.enhance ul {
+  margin: 6px 16px;
+  font-size: 18px;
 }
 
 footer#enhancements-footer {
@@ -479,7 +479,7 @@ footer a {
 }
 
 #timer {
-  display: none;
+  display: block;
   position: absolute;
   right: 5%;
   border: 1px solid;

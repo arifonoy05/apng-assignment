@@ -1,6 +1,9 @@
 // timer
+if (document.getElementById("quizForm")) {
+  Timer();
+}
 function Timer() {
-  var counter = 30;
+  var counter = 10;
   var myTimer = setInterval(function (e) {
     document.querySelector("#timer").style.display = "block";
     document.querySelector("#timer").innerHTML = counter;
@@ -9,21 +12,32 @@ function Timer() {
       document.querySelector("#timer").style.padding = "7px 13px";
       document.querySelector("#timer").classList.add("warn");
       document.querySelector("#timer").classList.add("blink");
-
-      //   var blink_speed = 100; // every 1000 == 1 second, adjust to suit
-      //   var t = setInterval(function () {
-      //     var ele = document.getElementById("timer");
-      //     ele.style.visibility = ele.style.visibility == "hidden" ? "" : "hidden";
-      //   }, blink_speed);
     }
     if (counter < 0) {
       clearInterval(myTimer);
       document.querySelector("#timer").style.display = "none";
-      alert("times up");
+      alert("Time's up!");
 
-      setTimeout(handleFormSubmit, 3000);
-      // form.submit();
+      if (handleFormSubmit(e) == 0) {
+        document.getElementById("submitbtn").style.display = "none";
+        document.getElementById('score').scrollIntoView({ behavior: 'smooth', block: 'center' });
+        setTimeout(function(){
+          window.location.reload(1);
+       }, 5000);
+      }
     }
   }, 1000);
 }
-Timer();
+
+// highlight nav with active class based on url
+function currentPage() {
+  const nav = document.querySelectorAll("nav a");
+  const urlFileName = location.href.split("/").pop();
+  nav.forEach((item) => {
+    const fileName = item.href.split("/").pop();
+    if (fileName == urlFileName) {
+      item.classList.add("active");
+    }
+  });
+}
+currentPage();

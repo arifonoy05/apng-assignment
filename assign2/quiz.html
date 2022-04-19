@@ -31,15 +31,16 @@
       <nav>
         <a href="index.html">home</a>
         <a href="topic.html">topic</a>
-        <a class="active" href="quiz.html">quiz</a>
+        <a href="quiz.html">quiz</a>
         <a href="enhancements.html">enhancements</a>
+        <a href="enhancements2.html">enhancements 2</a>
         <a href="result.html">result</a>
       </nav>
     </header>
     <main>
       <section class="quiz-banner">
         <h1>quiz</h1>
-        <span id="timer"></span>
+        <span id="timer">30</span>
       </section>
       <section class="quiz">
         <h2>Please answer the following questions</h2>
@@ -183,7 +184,8 @@
           </fieldset>
 
           <div id="score" class="score">
-            <h4>You scored <span id="grade"></span>, you must score 2 to be able make submission!</h4>
+            <h4>You scored <span id="grade"></span>, you must score atleast 1 correct answer to be able make submission! <br>
+            This page will refresh in 5 seconds!</h4>
           </div>
           <button id="submitbtn" class="submit" type="submit">Submit</button>
         </form>
