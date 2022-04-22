@@ -24,15 +24,21 @@ const score = {
 };
 
 const form = document.getElementById("quizForm");
+
 if (form) {
   form.addEventListener("submit", handleFormSubmit);
 }
 
+if (document.getElementById("submitbtn")) {
+  document
+    .getElementById("submitbtn")
+    .addEventListener("click", handleFormSubmit);
+}
+
 function handleFormSubmit(e) {
   grade = evaluate();
-  // e.preventDefault();
 
-  if(!emptyInfo()){
+  if (!emptyInfo()) {
     return 0;
   }
 
@@ -68,6 +74,7 @@ function handleFormSubmit(e) {
       // check if id exists in localstorage
       // overwrite if it does, otherwise append
       const data = JSON.parse(localStorage.resultList);
+
       console.log(data);
       resultList = data;
       resultList.map((item) => {
@@ -81,6 +88,10 @@ function handleFormSubmit(e) {
         }
       });
 
+      // if attempt == 0 FOR THIS SPECIFIC USER_ID, attempt += 1, store new result, submit form
+      // if attempt > 2 FOR THIS SPECIFIC USER_ID, attempt += 1, store result, submit form
+      // else record as new user and attept == 1, store result, submit form
+
       if (!sameID) {
         newAttempt.attempt = 1;
       }
@@ -89,7 +100,7 @@ function handleFormSubmit(e) {
         alert(
           "You already took the quiz twice, you cannot take the quiz again!"
         );
-        location.reload();
+        e.preventDedault();
       } else {
         // push data
         console.log("push new data and submit");
@@ -101,27 +112,23 @@ function handleFormSubmit(e) {
         return 1;
       }
     }
-
-    // if attempt == 0 FOR THIS SPECIFIC USER_ID, attempt += 1, store new result, submit form
-    // if attempt > 2 FOR THIS SPECIFIC USER_ID, attempt += 1, store result, submit form
-    // else record as new user and attept == 1, store result, submit form
-  } else {
-    alert("You must get atleast 2 correct answers!");
-    document.getElementById("submitbtn").style.display = "none";
+  } else if (grade == 0) {
+    if (e) {
+      return;
+    }
     return 0;
   }
 }
 
-function emptyInfo(){
+function emptyInfo() {
   const fname = document.getElementById("fname").value;
   const lname = document.getElementById("lname").value;
   const snum = document.getElementById("snum").value;
 
-  if(fname == "" || lname == "" || snum == ""){
+  if (fname == "" || lname == "" || snum == "") {
     alert("Student information is missing!");
     return false;
-  }
-  else return true;
+  } else return true;
 }
 
 function evaluate() {

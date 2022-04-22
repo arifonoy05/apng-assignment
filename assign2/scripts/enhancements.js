@@ -3,7 +3,7 @@ if (document.getElementById("quizForm")) {
   Timer();
 }
 function Timer() {
-  var counter = 10;
+  var counter = 12;
   var myTimer = setInterval(function (e) {
     document.querySelector("#timer").style.display = "block";
     document.querySelector("#timer").innerHTML = counter;
@@ -17,13 +17,17 @@ function Timer() {
       clearInterval(myTimer);
       document.querySelector("#timer").style.display = "none";
       alert("Time's up!");
+      document.querySelector("#submitbtn").style.display = "none";
 
-      if (handleFormSubmit(e) == 0) {
+      if (handleFormSubmit() == 0) {
+        alert("You must get atleast 2 correct answers!");
         document.getElementById("submitbtn").style.display = "none";
-        document.getElementById('score').scrollIntoView({ behavior: 'smooth', block: 'center' });
-        setTimeout(function(){
+        document
+          .getElementById("score")
+          .scrollIntoView({ behavior: "smooth", block: "center" });
+        setTimeout(function () {
           window.location.reload(1);
-       }, 5000);
+        }, 5000);
       }
     }
   }, 1000);
