@@ -3,7 +3,8 @@ if (document.getElementById("quizForm")) {
   Timer();
 }
 function Timer() {
-  var counter = 12;
+  "use strict";
+  var counter = 29;
   var myTimer = setInterval(function (e) {
     document.querySelector("#timer").style.display = "block";
     document.querySelector("#timer").innerHTML = counter;

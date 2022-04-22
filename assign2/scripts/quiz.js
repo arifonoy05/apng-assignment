@@ -97,10 +97,15 @@ function handleFormSubmit(e) {
       }
 
       if (newAttempt.attempt > 2) {
+        if (e) {
+          e.preventDefault();
+        }
         alert(
           "You already took the quiz twice, you cannot take the quiz again!"
         );
-        e.preventDedault();
+        setTimeout(function () {
+          window.location.reload(1);
+        }, 5000);
       } else {
         // push data
         console.log("push new data and submit");
@@ -114,6 +119,9 @@ function handleFormSubmit(e) {
     }
   } else if (grade == 0) {
     if (e) {
+      setTimeout(function () {
+        window.location.reload(1);
+      }, 5000);
       return;
     }
     return 0;
