@@ -24,27 +24,46 @@ const score = {
 };
 
 const form = document.getElementById("quizForm");
+const submitBtn = document.getElementById("submitbtn");
 
+// run function when form is submitted (eg timer/submit btn)
 if (form) {
   form.addEventListener("submit", handleFormSubmit);
 }
-
-if (document.getElementById("submitbtn")) {
-  document
-    .getElementById("submitbtn")
-    .addEventListener("click", handleFormSubmit);
+// fun function when button is clicked
+if (submitBtn) {
+  submitBtn.addEventListener("click", handleFormSubmit);
 }
 
+// form submit handler
 function handleFormSubmit(e) {
+
+  submitBtn.style.display = "none";
   grade = evaluate();
 
+  setTimeout(function () {
+    window.location.reload(1);
+  }, 10000);
+  
+  // check if any student information is missing
   if (!emptyInfo()) {
+    document.getElementById("error_info").style.display = "block";
     return 0;
   }
 
-  if (!checkAnswerForCheckbox()) {
+  // check if student id is 7 or 10 character long
+  if(!invalidId()){
+    document.getElementById("error_info").style.display = "block";
     return 0;
   }
+
+  // check if checkbox is empty
+  if (!checkAnswerForCheckbox()) {
+    document.getElementById("ques3").style.background = "#ff000042";
+    return 0;
+  }
+  
+  // if grade > 0, submit form
   if (grade > 0) {
     student.fname = document.getElementById("fname").value;
     student.lname = document.getElementById("lname").value;
@@ -53,6 +72,7 @@ function handleFormSubmit(e) {
     student.score = score;
 
     newAttempt = student;
+
 
     if (localStorage.resultList == undefined) {
       // localStorage empty, store result as new value
@@ -66,7 +86,8 @@ function handleFormSubmit(e) {
 
       form.submit();
       return 1;
-    } else {
+    } 
+    else {
       // localstorage contains data
       console.log("data exists");
       var sameID = false;
@@ -103,9 +124,6 @@ function handleFormSubmit(e) {
         alert(
           "You already took the quiz twice, you cannot take the quiz again!"
         );
-        setTimeout(function () {
-          window.location.reload(1);
-        }, 5000);
       } else {
         // push data
         console.log("push new data and submit");
@@ -117,15 +135,7 @@ function handleFormSubmit(e) {
         return 1;
       }
     }
-  } else if (grade == 0) {
-    if (e) {
-      setTimeout(function () {
-        window.location.reload(1);
-      }, 5000);
-      return;
-    }
-    return 0;
-  }
+  } 
 }
 
 function emptyInfo() {
@@ -134,7 +144,6 @@ function emptyInfo() {
   const snum = document.getElementById("snum").value;
 
   if (fname == "" || lname == "" || snum == "") {
-    alert("Student information is missing!");
     return false;
   } else return true;
 }
@@ -142,9 +151,9 @@ function emptyInfo() {
 function evaluate() {
   var grade = getGrade();
 
-  if (grade < 3) {
+  if (grade < 1) {
     document.getElementById("grade").innerHTML = grade;
-    document.getElementById("score").style.display = "block";
+    document.getElementById("error_grade").style.display = "block";
   }
   return grade;
 }
@@ -259,10 +268,8 @@ function checkAnswerForCheckbox() {
   const form_data = new FormData(document.querySelector("form"));
 
   if (form_data.getAll("q3[]").length === 0) {
-    document.getElementById("ques3").style.background = "#ff000042";
     return false;
   } else {
-    document.getElementById("ques3").style.background = "transparent";
     return true;
   }
 }

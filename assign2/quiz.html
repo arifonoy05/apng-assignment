@@ -92,6 +92,10 @@
                   title="Student Number must be either 7 or 10 characters "
                 />
               </div>
+              <h4 id="error_info" class="error">
+                Student information invalid! <br />Name must be alphabetic
+                characters and ID must have either 7 or 10 digits
+              </h4>
             </div>
           </fieldset>
           <fieldset>
@@ -113,7 +117,8 @@
               <div id="ques2" class="form-item">
                 <fieldset>
                   <label
-                    >Question 2: Which browser first implemented support for APNG</label
+                    >Question 2: Which browser first implemented support for
+                    APNG</label
                   >
                   <label for="q2_1"
                     ><input
@@ -125,11 +130,21 @@
                     />Mozilla Firefox</label
                   >
                   <label for="q2_2"
-                    ><input type="radio" name="q2" id="q2_2" value="Google Chrome" /> Google
-                    Chrome</label
+                    ><input
+                      type="radio"
+                      name="q2"
+                      id="q2_2"
+                      value="Google Chrome"
+                    />
+                    Google Chrome</label
                   >
                   <label for="q2_3"
-                    ><input type="radio" name="q2" id="q2_3" value="Internet Explorer" />
+                    ><input
+                      type="radio"
+                      name="q2"
+                      id="q2_3"
+                      value="Internet Explorer"
+                    />
                     Internet Explorer</label
                   >
                   <label for="q2_4"
@@ -142,28 +157,63 @@
                 <fieldset>
                   <label>Question 3: Who were the creators of APNG?</label>
                   <label for="q3_1"
-                    ><input type="checkbox" name="q3[]" class="checkQ" id="q3_1" value="Stuart Parmenter"  /> Stuart
-                    Parmenter</label
+                    ><input
+                      type="checkbox"
+                      name="q3[]"
+                      class="checkQ"
+                      id="q3_1"
+                      value="Stuart Parmenter"
+                    />
+                    Stuart Parmenter</label
                   >
                   <label for="q3_2"
-                    ><input type="checkbox" name="q3[]" class="checkQ" id="q3_2" value="Vladimir Vukicevic" /> Vladimir
-                    Vukicevic</label
+                    ><input
+                      type="checkbox"
+                      name="q3[]"
+                      class="checkQ"
+                      id="q3_2"
+                      value="Vladimir Vukicevic"
+                    />
+                    Vladimir Vukicevic</label
                   >
                   <label for="q3_3"
-                    ><input type="checkbox" name="q3[]" class="checkQ" id="q3_3" value="Dmitri Alenkov" /> Dmitri
-                    Alenkov</label
+                    ><input
+                      type="checkbox"
+                      name="q3[]"
+                      class="checkQ"
+                      id="q3_3"
+                      value="Dmitri Alenkov"
+                    />
+                    Dmitri Alenkov</label
                   >
                   <label for="q3_4"
-                    ><input type="checkbox" name="q3[]" class="checkQ" id="q3_4" value="Alexander Parelis"/> Alexander
-                    Parelis</label
+                    ><input
+                      type="checkbox"
+                      name="q3[]"
+                      class="checkQ"
+                      id="q3_4"
+                      value="Alexander Parelis"
+                    />
+                    Alexander Parelis</label
                   >
                 </fieldset>
               </div>
 
               <div class="form-item">
                 <fieldset>
-                  <label for="q4">Question 4: What year was APNG created?</label>
-                  <input type="number" id="q4" name="q4" maxlength="4" min="1900" max="2222" placeholder="Year" required />
+                  <label for="q4"
+                    >Question 4: What year was APNG created?</label
+                  >
+                  <input
+                    type="number"
+                    id="q4"
+                    name="q4"
+                    maxlength="4"
+                    min="1900"
+                    max="2222"
+                    placeholder="Year"
+                    required
+                  />
                 </fieldset>
               </div>
 
@@ -183,11 +233,14 @@
             </div>
           </fieldset>
 
-          <div id="score" class="score">
-            <h4>You scored <span id="grade"></span>, you must score atleast 1 correct answer to be able make submission! <br>
-            This page will refresh in 5 seconds!</h4>
+          <div id="error_grade" class="error">
+            <h4>
+              You scored <span id="grade"></span>, you must score atleast 1
+              correct answer to be able make submission! <br />
+              This page will refresh in 10 seconds!
+            </h4>
           </div>
-          <button id="submitbtn" class="submit" type="button">Submit</button>
+          <button id="submitbtn" class="submit" type="submit">Submit</button>
         </form>
       </section>
     </main>

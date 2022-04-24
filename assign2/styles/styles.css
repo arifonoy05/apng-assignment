@@ -1,3 +1,4 @@
+/* style reset */
 *,
 html {
   margin: 0;
@@ -33,9 +34,11 @@ p {
   font-size: 20px;
   line-height: 1.25;
 }
+/* for highlighting text inside h2 tags */
 h2 span {
   text-transform: uppercase;
 }
+
 aside {
   border: 1px solid #333333;
   background-color: #ffffff;
@@ -119,6 +122,7 @@ div.topic-content div {
   margin-bottom: 30px;
 }
 
+/* index page banner start */
 .banner {
   display: flex;
   justify-content: space-between;
@@ -161,7 +165,9 @@ div.topic-content div {
   border: 2px solid white;
   background-color: #294f83;
 }
+/* index page banner end */
 
+/* index page intro start */
 .intro {
   padding: 20px 0;
 }
@@ -176,7 +182,9 @@ div.topic-content div {
   display: block;
   margin: 12px 0;
 }
+/* index page intro end */
 
+/* index page more content start */
 .more {
   padding: 0 0 40px;
   display: flex;
@@ -209,9 +217,9 @@ div.topic-content div {
   font-weight: bold;
   color: #475889;
 }
-/* home page */
+/* index page more content end */
 
-/* topic page */
+/*about pagee start */
 .about {
   display: flex;
   flex-direction: row;
@@ -231,13 +239,15 @@ div.topic-content div {
 .about-img img {
   width: 60%;
 }
+/* about page end */
+
+/* topic page start */
 .history {
   margin-top: 10px;
 }
 .topic-table {
   overflow-x: auto;
 }
-
 .topic-with-aside {
   display: flex;
 }
@@ -257,20 +267,18 @@ div.topic-content div {
 .topic-aside ol {
   margin-left: 20px;
 }
-
 .struct-img img {
   width: 100%;
 }
-
 main#topic table {
   margin-top: 10px;
 }
 .browser-table {
   overflow-x: auto;
 }
-/* topic page */
+/* topic page end */
 
-/* quiz page */
+/* quiz page start */
 .quiz-banner {
   text-align: center;
   min-height: 80px;
@@ -333,18 +341,20 @@ select {
   font-size: 20px;
   border: 2px solid white;
 }
-#score {
+#error_info, #error_grade {
   display: none;
 }
-.score {
+.error {
+  font-size: 16px;
   border: 1px solid red;
   padding: 10px 20px;
   margin: 10px auto;
   color: red;
 }
-/* quiz page */
+/* quiz page end */
 
-/* enhancements page */
+/* enhancements page start */
+/* styling is cmmon for both enhancement pages */
 main#enhancements {
   height: 90vh;
 }
@@ -387,6 +397,7 @@ footer a {
 /* footer */
 
 /* responsive */
+/* responsive for tablet and phone */
 @media screen and (max-width: 600px) {
   nav a {
     padding: 8px 6px;
@@ -435,6 +446,7 @@ footer a {
     transform: scale(1.5);
   }
 }
+/* responsive for pc */
 @media screen and (max-width: 992px) {
   .more {
     flex-direction: column;
@@ -451,12 +463,14 @@ footer a {
 }
 /* responsive */
 
+/* hover image about page to change image src */
 /* more than 100k */
 .about-img img:hover {
   content: url(../images/duck.gif);
 }
 /* more than 100k */
 
+/* minor general adjustments */
 .emptyInput {
   background-color: #e1373790;
 }
@@ -491,8 +505,6 @@ footer a {
   border: 1px solid red;
   animation: blink 0.5s linear infinite;
 }
-.blink {
-}
 
 @keyframes blink {
   0% {
@@ -502,3 +514,4 @@ footer a {
     opacity: 1;
   }
 }
+/* minor general adjustments */
